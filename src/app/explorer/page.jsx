@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 
 /* ------------------ Supabase client ------------------ */
 const supabase = createClient(
-    "https://azzxcjxmbcpimyjgldgt.supabase.co",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF6enhjanhtYmNwaW15amdsZGd0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjgxOTQzNzMsImV4cCI6MjA4Mzc3MDM3M30.HFXQJCRCSizwDuO8s_kOhprb9MwxPYYVP__UnCOpfeU"
+    "",
+    ""
 );
 
 /* ------------------ Build tree ------------------ */
