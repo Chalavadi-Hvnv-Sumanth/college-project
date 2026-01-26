@@ -5,8 +5,8 @@ import { createClient } from "@supabase/supabase-js";
 import { useState } from "react";
 
 const supabase = createClient(
-    "https://azzxcjxmbcpimyjgldgt.supabase.co",
-    "sb_secret_wN58kJTLrvGlEIbC9QlC2Q_8sjrGWeU"
+    "",
+    ""
 );
 
 export function UploadPage() {
