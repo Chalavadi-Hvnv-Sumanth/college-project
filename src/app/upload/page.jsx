@@ -20,11 +20,11 @@ export function UploadPage() {
         setMessage("");
 
         for (const file of files) {
-            // preserves folder structure
+           
             const filePath = `uploads/${file.webkitRelativePath}`;
 
             const { error } = await supabase.storage
-                .from("upload") // bucket name
+                .from("upload") 
                 .upload(filePath, file, {
                     upsert: true,
                 });
