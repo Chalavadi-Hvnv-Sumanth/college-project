@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Student Archive</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="project-container">
+        <header class="project-header">
+            <span class="category-tag">Web Development</span>
+            <h1>Student Project</h1>
+            <p class="author">By Senior Student • Class of 2024</p>
+        </header>
+
+        <div class="project-grid">
+            
+            <section class="content-section">
+                <h3><i class="icon">📝</i> Description</h3>
+                <p id="project-desc">A centralized platform for rural citizens to report local issues directly to authorities using a mobile-friendly interface and Firebase backend.</p>
+
+                <h3><i class="icon">🚀</i> Key Features</h3>
+                <ul id="features-list">
+                    <li>Real-time status tracking of complaints.</li>
+                    <li>Automated SMS notifications for officials.</li>
+                    <li>Geo-tagging for precise issue location.</li>
+                </ul>
+
+                <h3><i class="icon">⚙️</i> How it Works</h3>
+                <p id="working-logic">The system uses a React frontend to capture user data, which is then pushed to a Firestore database. A Cloud Function triggers whenever a new entry is created, alerting the relevant department.</p>
+
+                <h3><i class="icon">🛠️</i> Implementation Steps</h3>
+                <ol class="step-list">
+                    <li>Set up Firebase project and Authentication.</li>
+                    <li>Design the schema for 'Grievances' collection.</li>
+                    <li>Develop the submission form with Location API integration.</li>
+                    <li>Deploy using Vercel.</li>
+                </ol>
+            </section>
+
+            <aside class="project-sidebar">
+                <div class="action-card">
+                    <h4>Resources</h4>
+                    <button class="btn-primary">Download Project (.zip)</button>
+                    <a href="#" class="btn-secondary">View GitHub Repo</a>
+                </div>
+                
+                <div class="tips-card">
+                    <h4>Senior's Tip 💡</h4>
+                    <p>"Focus on the database rules early on. Security in Firebase is often overlooked by beginners!"</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+</body>
+</html>
