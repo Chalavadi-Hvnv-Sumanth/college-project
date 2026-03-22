@@ -1,0 +1,142 @@
+.file-containe{
+  width:1100px;
+  margin:49px auto;
+  background:linear-gradient(135deg,#4b0082,#6a0dad,#8a2be2);
+  border-radius:12px;
+  padding:2px;
+}
+
+.file-inne{
+  background:#1e1b2e;
+  border-radius:10px;
+  overflow:hidden;
+  color:white;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.path-ba{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:14px 18px;
+  background:#2b2540;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.path-bar span{
+  font-weight:500;
+  color:#d6c7ff;
+}
+
+.path-bar button{
+  background:#8a2be2;
+  border:none;
+  padding:6px 14px;
+  border-radius:6px;
+  color:white;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.path-bar button:hover{
+  background:#a855f7;
+}
+
+.file-list{
+  display:flex;
+  flex-direction:column;
+}
+
+.file-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 18px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  cursor:pointer;
+  transition:0.25s;
+}
+
+.file-row:hover{
+  background:rgba(138,43,226,0.25);
+}
+
+.icon{
+  font-size:20px;
+}
+
+.file-name{
+  font-size:15px;
+}
+
+.preview{
+  padding:20px;
+  border-top:1px solid rgba(255,255,255,0.1);
+}
+
+.preview h3{
+  margin-bottom:10px;
+}
+
+.deletecontaine{
+  position: relative;
+  color:aliceblue;
+  left: 0px;
+  bottom: 50px;
+  width: 750px;
+  height: 240px;
+  padding-bottom: 30px;
+  margin: 100px auto;
+  padding: 30px;
+  border-radius: 12px;
+ background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.15),
+    rgba(236, 72, 153, 0.15)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow:
+    0 0 25px rgba(99, 102, 241, 0.25),
+    0 0 45px rgba(236, 72, 153, 0.15);
+
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.deletecontaine h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.deletecontaine input {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 15px;
+  margin-left: 180px;
+  outline: none;
+}
+
+.deletecontaine button {
+  width: 18%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background:#8a2be2;
+  border:none;
+  padding:6px 14px;
+  border-radius:6px;
+  color:white;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.deletecontaine button:hover {
+  background:#a855f7;
+}

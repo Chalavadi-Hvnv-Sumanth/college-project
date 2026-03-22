@@ -1,0 +1,97 @@
+/* Remove default body margin */
+body {
+    margin: 0;
+    background: #0f0f0f;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Wrapper – no full height */
+.upload-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;   /* control top spacing manually */
+}
+
+/* Glass card */
+.upload-card {
+    width: 430px;
+    padding: 45px;
+    border-radius: 18px;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: white;
+}
+
+/* Drop zone */
+.drop-zone {
+    display: block;
+    padding: 35px 18px;   /* reduced size */
+    border-radius: 14px;
+    border: 2px dashed rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.drop-zone:hover {
+    border-color: #6366f1;
+    background: rgba(99, 102, 241, 0.08);
+    transform: translateY(-3px);
+}
+
+/* Icon */
+.upload-icon {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+/* Text */
+.drop-content h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.drop-content p {
+    margin: 6px 0 4px;
+    font-size: 13px;
+    color: #cfcfcf;
+}
+
+.drop-content span {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* Progress bar */
+.progress-bar-container {
+    margin-top: 18px;
+    height: 6px;
+    width: 100%;
+    background: #2a2a2a;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #6366f1, #22d3ee);
+    transition: width 0.3s ease;
+}
+
+/* Status */
+.status {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.uploading {
+    color: #facc15;
+}
+
+.success {
+    color: #22c55e;
+    font-weight: 500;
+}

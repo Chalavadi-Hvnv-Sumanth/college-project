@@ -1,0 +1,349 @@
+.Datafrom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    gap: 40px;
+}
+.student-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.student-form input,
+.student-form select {
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.student-form button {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    background: orangered;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+.header {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    background-color: #1a1a1a;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.collegeimg {
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.search-bar {
+    height: 28px;
+    flex: 1;
+    margin: 0 270px;
+    padding: 8px 15px;
+    border-radius: 25px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-bar::placeholder {
+    color: #aaa;
+}
+
+.search-bar:focus {
+    background-color: #444;
+    box-shadow: 0 0 5px #555;
+}
+
+.authtimg {
+    position: fixed;
+    top: 15px;
+    right: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    z-index: 10;
+
+}
+
+.authtimg:hover {
+    transform: scale(1.1);
+}
+
+.line {
+    border: 0.5px solid #555;
+    margin-top: 5px;
+}
+.userprofilerootpage{
+    max-width: 98%;
+    height: 500px;
+    border: 1px solid gray;
+    position: relative;
+    top: 30px;
+    left: 16px;
+    background-color:#333333;
+}
+.userprofilepagecontroller{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: space-around;
+    position: relative;
+    top: 19px;
+}
+
+/* Navbar container */
+.navbar {
+  width: 90%;
+  margin: 30px auto;
+  padding: 15px 25px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-radius: 18px;
+  backdrop-filter: blur(14px);
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.15),
+    rgba(236, 72, 153, 0.15)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow:
+    0 0 25px rgba(99, 102, 241, 0.25),
+    0 0 45px rgba(236, 72, 153, 0.15);
+
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Logo */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-text {
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+/* Nav icons */
+.nav-icons {
+  display: flex;
+  gap: 25px;
+}
+
+/* Each nav item */
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 12px;
+
+  transition: all 0.3s ease;
+  font-size: 12px;
+  color: #cfcfcf;
+}
+
+/* Hover */
+.nav-item:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+/* Active tab */
+.nav-item.active {
+  background: rgba(99, 102, 241, 0.2);
+  color: white;
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.6);
+}
+
+/* Logout special hover */
+.nav-item.logout:hover {
+  background: rgba(255, 0, 0, 0.15);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+/* Center card */
+.AccountRoot {
+  width: 590px;
+  margin: 60px auto;
+  padding: 35px 30px;
+  border-radius: 22px;
+  position: relative;
+
+  /* Vibrant gradient background */
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.25),
+    rgba(236, 72, 153, 0.25)
+  );
+
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow:
+    0 0 30px rgba(99, 102, 241, 0.3),
+    0 0 60px rgba(236, 72, 153, 0.2);
+
+  text-align: center;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+
+  transition: 0.4s ease;
+}
+
+/* Hover effect */
+.AccountRoot:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 40px rgba(99, 102, 241, 0.5),
+    0 0 80px rgba(236, 72, 153, 0.4);
+}
+
+/* Profile Image */
+.Accountpicture {
+   
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  padding: 3px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+}
+
+/* Details container */
+.AccountDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Individual detail */
+.AccountDetailsChild {
+  
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.07);
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  transition: 0.3s ease;
+}
+
+/* Hover highlight on each row */
+.AccountDetailsChild:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.03);
+}
+.edit{
+  position: relative;
+  bottom: 115px;
+  left: 250px;
+  
+}
+.loginfo{
+  color: aliceblue;
+}
+.closebutton{
+  position: relative;
+  right: 230px;
+  top: 10px;
+}
+.Datafrom1{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 155px;
+}
+.vvitimage{
+  position: relative;
+  bottom: 30px;
+  left: 90px;
+}
+
+/* HEADER */
+.admin-header{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  text-align:center;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.admin-header h2{
+  margin-top:10px;
+  font-weight:600;
+  color:#d6c7ff;
+  letter-spacing:1px;
+}
+
+.vvitimage{
+  border-radius:10px;
+}
+
+/* MESSAGE */
+.message-box{
+  margin:15px;
+  padding:10px;
+  border-radius:8px;
+  background:rgba(138,43,226,0.2);
+  color:#d6c7ff;
+  text-align:center;
+  font-size:14px;
+}
+
+/* VERIFY */
+.verify-btn{
+  background:#22c55e;
+  border:none;
+  padding:6px 12px;
+  border-radius:6px;
+  color:white;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.verify-btn:hover{
+  background:#16a34a;
+  transform:scale(1.05);
+}
+
+/* UNVERIFY */
+.unverify-btn{
+  background:#ef4444;
+  border:none;
+  padding:6px 12px;
+  border-radius:6px;
+  color:white;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.unverify-btn:hover{
+  background:#dc2626;
+  transform:scale(1.05);
+}
