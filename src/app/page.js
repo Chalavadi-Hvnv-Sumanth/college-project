@@ -16,7 +16,7 @@ export default async function Home() {
         return (
             <div className="page-background">
                 <div id="topbar">
-                    <h1>VVITU REPOSITORY</h1>
+                    <h1>VVITU PROJECT REPOSITORY</h1>
                     <a href="/auth/login?returnTo=/" className="pink-orange-btn">
                         Log In
                     </a>
