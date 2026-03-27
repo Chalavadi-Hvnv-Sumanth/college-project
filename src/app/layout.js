@@ -24,13 +24,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head><link
-  rel="apple-touch-icon"
-  href="/VVIT.png"
-  type="image/<generated>"
-  sizes="<generated>"
-/>
+      <head>
 <meta name="google-site-verification" content="q-fgCC4xlwkadgO_7dblSqDph8vmrBhT_sBuP6M0VmY" />
+<meta name="title" content="VVITU Repository" />
+<meta name="description" content="Access academic resources, notes, and project materials easily." />
+<meta property="og:title" content="VVITU Repository" />
+<meta property="og:description" content="A platform for students to access academic resources." />
+<meta property="og:url" content="https://vviturepository.vercel.app" />
+<link rel="icon" type="image/png" href="/VVIT.png" />
+<link rel="apple-touch-icon" href="/VVIT.png" />
+<link rel="shortcut icon" href="/VVIT.png" />
+<meta property="og:image" content="https://vviturepository.vercel.app/VVIT.png" />
 </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
