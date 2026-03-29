@@ -15,12 +15,14 @@ export default async function Home() {
     if (!user) {
         return (
             <div className="page-background">
+
                 <div id="topbar">
                     <h1>VVITU REPOSITORY</h1>
                     <a href="/auth/login?returnTo=/" className="pink-orange-btn">
                         Log In
                     </a>
                 </div>
+               
             </div>
         );
     }

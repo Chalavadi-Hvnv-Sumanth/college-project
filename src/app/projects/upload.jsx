@@ -78,8 +78,8 @@ export default function CallingFunction() {
   if (!user) return <p>Please login first</p>;
 
   return (
-    <div className="file-container">
-      <div className="file-inner">
+    <div className="file">
+      <div className="file-in">
 
         <div className="path-bar">
           <button onClick={goBack}>⬅ Back</button>

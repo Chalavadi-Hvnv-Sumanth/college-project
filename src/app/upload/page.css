@@ -95,3 +95,9 @@ body {
     color: #22c55e;
     font-weight: 500;
 }
+@media(max-width:867px){
+.upload-card {
+position: relative;
+left: 31px;
+}
+}

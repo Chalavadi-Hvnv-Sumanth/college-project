@@ -1,14 +1,15 @@
-.file-container{
-  width:1200px;
+.file{
+  width:1240px;
   margin:49px auto;
   background:linear-gradient(135deg,#4b0082,#6a0dad,#8a2be2);
   border-radius:12px;
   padding:2px;
   position: relative;
-  left: 120px;
+  left: 82px;
+ 
 }
 
-.file-inner{
+.file-in{
   background:#1e1b2e;
   border-radius:10px;
   overflow:hidden;
@@ -84,7 +85,7 @@
   width: 390px;
   height: 65px;
   
-  position: relative;
+  
   left: 100px;
   bottom: 7px;
   
@@ -138,13 +139,12 @@
   justify-content: space-around;
 }
 .deletecontainer {
-  position: relative;
-  left: 290px;
-  bottom: 50px;
-  width: 750px;
+ 
+  width: 800px;
   height: 240px;
   padding-bottom: 30px;
-  margin: 100px auto;
+
+  margin: 50px 270px;
   padding: 30px;
   border-radius: 12px;
  background: linear-gradient(
@@ -211,4 +211,74 @@
   font-size: 16px;
   position: relative;
   bottom: 10px;
+}
+@media(max-width:1477px){
+ .file{
+  width:1000px;
+ 
+  
+ 
+}
+}
+@media(max-width:1132px){
+ .file{
+  width:700px;
+ }
+ .deletecontainer {
+  width: 650px;
+ 
+}
+}
+@media(max-width:867px){
+ .file{
+  width:360px;
+  position: relative;
+  left: 10px;
+    display: block;
+  margin: 35px auto;
+
+ .icon{
+  font-size:13px;
+}
+
+.file-name{
+  font-size:13px;
+}
+ 
+}
+.deletecontainer {
+    width:350px;
+    position: relative;
+    right: 280px;
+ 
+}
+.deletecontainer h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+.deletecontainer input {
+  width: 63%;
+  display: flex;
+  flex-direction: column;
+  
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 15px;
+  margin-left: 59px;
+  outline: none;
+}
+.deletecontainer button {
+  width: 28%;
+  padding:6px 14px;
+  
+}
+.featurescontainer{
+  top: 2px;
+  left: 20px;
+    display: block;
+  margin: 20px auto;
+
+}
 }

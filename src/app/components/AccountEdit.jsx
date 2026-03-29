@@ -17,7 +17,7 @@ export default function StudentForm() {
             return;
         }
 
-        const roll = e.target.roll.value.trim();
+        
         const name = e.target.name.value.trim();
         const year = e.target.year.value;
         const branch = e.target.branch.value;
@@ -27,7 +27,6 @@ export default function StudentForm() {
                 .from("userdata") // table name must match exactly
                 .update([
                     {
-                        roll,
                         name,
                         year,
                         branch,
@@ -63,7 +62,6 @@ export default function StudentForm() {
             />
 
             <form className="student-form" onSubmit={handleSubmit}>
-                <input type="text" name="roll" placeholder="Roll Number" required />
                 <input type="text" name="name" placeholder="Student Name" required />
 
                 <select name="year" required>

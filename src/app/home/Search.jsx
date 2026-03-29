@@ -140,7 +140,7 @@ function Search({ onSelectFolder }) {
     }
 
     const filtered = onlyFolders.filter(item =>
-      item.name.toLowerCase().includes(query.toLowerCase())
+      item.name.toLowerCase().includes(query.toLowerCase().trim())
     );
 
     if (filtered.length === 0) setMessage("No matching folders");

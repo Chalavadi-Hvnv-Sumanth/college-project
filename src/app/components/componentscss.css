@@ -240,7 +240,10 @@
   flex-direction: column;
   gap: 12px;
 }
-
+.imgh{
+  width: 0px;
+  height: 0px;
+}
 /* Individual detail */
 .AccountDetailsChild {
   
@@ -346,4 +349,70 @@
 .unverify-btn:hover{
   background:#dc2626;
   transform:scale(1.05);
+}
+@media (max-width:867px) {
+  .navbar{
+    width: 380px;
+    position: relative;
+    left:18px;
+    
+  }
+  .logo-text {
+  font-weight: 600;
+  font-size: 8px;
+  display: none;
+  letter-spacing: 1px;
+}
+.nav-item {
+  font-size: 10px;
+   
+  position: relative;
+  
+  cursor: pointer;
+  padding: 3px 7px;
+  border-radius: 12px;
+
+}
+ .nav-img {
+    width: 25px;
+    height: 25px;
+  }
+  .imgh1{
+    width: 0px;
+    height: 0px;
+    
+  }
+   .imgh{
+    width: 70px;
+    height:70px;
+    display: block;
+  margin: 20px auto;
+  position: relative;
+  left: 30px;
+  }
+ .AccountRoot{
+  width: 370px;
+    padding: 35px 30px;
+  left: 10px;
+  
+ }
+ .AccountDetailsChild {
+  
+  
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  transition: 0.3s ease;
+}
+.edit{
+  left: 160px;
+}
+.Datafrom1{
+  
+  padding-left: 40px;
+}
+.closebutton{
+  right: 160px;
+  top: 10px;
+}
+
 }

@@ -87,6 +87,7 @@ export default function Delete() {
   };
 
   return (
+    <div className="lk">
     <div className="deletecontainer">
       <h2>Delete Yours VVITU Repository Folders</h2>
 
@@ -102,6 +103,7 @@ export default function Delete() {
       </button>
 
       {message && <p className="message">{message}</p>}
+    </div>
     </div>
   );
 }

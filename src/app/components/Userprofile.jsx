@@ -14,10 +14,18 @@ export default function Userprofile() {
 
     return (
         <>
+        <Image
+                      className="imgh"
+                        src="/VVIT.png"
+                        alt="VVIT Logo"
+                        width={50}
+                        height={50}
+                    />
             <div className="navbar">
 
                 <div className="logo-section">
-                    <Image
+                    <Image   
+                    className="imgh1"        
                         src="/VVIT.png"
                         alt="VVIT Logo"
                         width={50}
@@ -41,7 +49,7 @@ export default function Userprofile() {
                         className={`nav-item ${index === -1 ? "active" : ""}`}
                         onClick={() => setIndex(-1)}
                     >
-                        <Image src="/Home.gif" alt="" width={32} height={32} />
+                        <Image  src="/Home.gif" alt="" className="nav-img" width={32} height={32}  />
                         <span>Home</span>
                     </div> 
 
@@ -49,7 +57,7 @@ export default function Userprofile() {
                         className={`nav-item ${index === 0 ? "active" : ""}`}
                         onClick={() => setIndex(0)}
                     >
-                        <Image src="/projects.gif" alt="" width={32} height={32} />
+                        <Image src="/projects.gif" alt="" className="nav-img" width={32} height={32} />
                         <span>Projects</span>
                     </div>
                     
@@ -57,7 +65,7 @@ export default function Userprofile() {
                         className={`nav-item ${index === 1 ? "active" : ""}`}
                         onClick={() => setIndex(1)}
                     >
-                        <Image src="/loadtick.gif" alt="" width={32} height={32} />
+                        <Image src="/loadtick.gif" alt="" className="nav-img" width={32} height={32} />
                         <span>verified Projects</span>
                     </div>
 
@@ -67,7 +75,7 @@ export default function Userprofile() {
                         className={`nav-item ${index === 2 ? "active" : ""}`}
                         onClick={() => setIndex(2)}
                     >
-                        <Image src="/upload.gif" alt="" width={34} height={34} />
+                        <Image src="/upload.gif" alt="" className="nav-img" width={34} height={34} />
                         <span>Upload</span>
                     </div>
 
@@ -75,14 +83,14 @@ export default function Userprofile() {
                         className={`nav-item ${index === 3 ? "active" : ""}`}
                         onClick={() => setIndex(3)}
                     >
-                        <Image src="/useraccount.gif" alt="" width={30} height={30} />
+                        <Image src="/useraccount.gif" alt="" className="nav-img" width={30} height={30} />
                         <span>Details</span>
                     </div>
 
                     <div className="nav-item logout">
                         <a href="/auth/logout">
                        
-                            <Image src="/userlogout1.gif" alt="" width={30} height={30} />
+                            <Image src="/userlogout1.gif" alt="" className="nav-img" width={30} height={30} />
                         </a>
                         <span>Logout</span>
                     </div>

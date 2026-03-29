@@ -97,3 +97,11 @@
   background: rgba(0, 0, 0, 0.2);
   border-radius: 3px;
 }
+@media(max-width:867px){
+.vp-container {
+  width: 380px;
+  position: relative;
+  left: 27px;
+
+}
+}

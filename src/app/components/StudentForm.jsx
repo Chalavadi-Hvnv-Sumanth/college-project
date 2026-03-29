@@ -16,7 +16,13 @@ export default function StudentForm() {
             console.error("User not logged in!");
             return;
         }
-
+        let code1="123"
+        const code = e.target.code.value.trim();
+        if(code!=code1){
+            logset("Enter the correct code");
+             
+            return;
+        }
         const roll = e.target.roll.value.trim();
         const name = e.target.name.value.trim();
         const year = e.target.year.value;
@@ -82,7 +88,7 @@ export default function StudentForm() {
                     <option value="MECH">MECH</option>
                     <option value="CIVIL">CIVIL</option>
                 </select>
-
+                <input type="text" name="code" placeholder="Enter VVITU Code" required />
                 <button type="submit">Submit</button>
             </form>
             <div className="loginfo">{log}</div>
