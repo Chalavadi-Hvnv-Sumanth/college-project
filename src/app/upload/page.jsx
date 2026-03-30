@@ -53,7 +53,7 @@ export default function UploadPage() {
         zip.file(file.webkitRelativePath, file);
 
         uploaded++;
-        setProgress(Math.round((uploaded / total) * 80));
+        setProgress(Math.round((uploaded / total) * 100));
       }
 
       const zipBlob = await zip.generateAsync({ type: "blob" });
