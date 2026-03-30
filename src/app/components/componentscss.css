@@ -391,9 +391,10 @@
   left: 20px;
   }
  .AccountRoot{
-  width: 370px;
+  width: 345px;
     padding: 35px 30px;
   left: 10px;
+  overflow-x: hidden;
   
  }
  .AccountDetailsChild {

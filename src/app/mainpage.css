@@ -116,6 +116,7 @@ color: white;
       background-repeat: no-repeat;
      background-size: contain;    
      position: relative;  
+     right: 10px;
   } 
   h1{
     font-size: 18px;
@@ -124,5 +125,8 @@ color: white;
     font-size: 0.675rem;
     line-height: 0.90rem;
      padding: 0.425rem 1rem;
+     position: relative;
+     left: 5px;
+     top: 2px;
   }
 }
