@@ -2,14 +2,16 @@
 
 import { useState, useEffect } from "react";
 import supabase from "@/lib/supabaseClient";
-import Image from "next/image";
 import "./projects.css";
 
-// Viewer component
+// ================= VIEWER =================
 function Viewer({ folderName, onBack }) {
   const [data, setData] = useState([]);
   const [path, setPath] = useState(folderName);
+
   const [fileUrl, setFileUrl] = useState(null);
+  const [fileContent, setFileContent] = useState("");
+  const [previewType, setPreviewType] = useState(null);
 
   useEffect(() => {
     if (path) loadData(path);
@@ -29,80 +31,182 @@ function Viewer({ folderName, onBack }) {
     setData(data || []);
   }
 
-  function handleClick(item) {
+  // ✅ UPDATED CLICK LOGIC
+  async function handleClick(item) {
     const newPath = `${path}/${item.name}`;
 
     if (!item.metadata) {
       setPath(newPath);
       setFileUrl(null);
+      setPreviewType(null);
     } else {
       const { data } = supabase
         .storage
         .from("root")
         .getPublicUrl(newPath);
 
-      setFileUrl(data.publicUrl);
+      const url = data.publicUrl;
+      const ext = item.name.split(".").pop().toLowerCase();
+
+      const codeExt = [
+        "js","ts","java","cpp","c","py","json","xml","yml","yaml","html","css"
+      ];
+
+      // ✅ CODE FILES
+      if (codeExt.includes(ext)) {
+        try {
+          const res = await fetch(url);
+          const text = await res.text();
+          setFileContent(text);
+          setPreviewType("code");
+          setFileUrl(null);
+        } catch {
+          setPreviewType("unsupported");
+        }
+        return;
+      }
+
+      // ✅ IMAGE / PDF
+      if (["jpg","jpeg","png","gif","webp","pdf"].includes(ext)) {
+        setFileUrl(url);
+        setPreviewType("iframe");
+        return;
+      }
+
+      // ❌ OTHER
+      setPreviewType("unsupported");
+      setFileUrl(null);
     }
   }
 
   function goBack() {
     const a = path.lastIndexOf("/");
     if (a === -1) {
-      onBack(); // go back to search if at root
+      onBack();
       return;
     }
     setPath(path.substring(0, a));
     setFileUrl(null);
+    setPreviewType(null);
   }
 
-  return (
-    <>
-      <div className="file-containe">
-        <div className="file-inne">
-          <div className="path-bar">
-            <button onClick={goBack}>⬅ Back</button>
-            <span>{path}</span>
-          </div>
+  // DOWNLOAD
+  async function downloadFolder(name) {
+    const { data } = await supabase
+      .storage
+      .from("zipstorage")
+      .download(`${name}.zip`);
 
-          <div className="file-list">
-            {data.length === 0 ? (
-              <p className="empty-message">No files</p>
-            ) : (
-              data.map((item, index) => (
+    if (!data) return;
+
+    const url = URL.createObjectURL(data);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `${name}.zip`;
+    a.click();
+  }
+
+  const isTopLevel = path === folderName;
+
+  return (
+    <div className="file-containe">
+      <div className="file-inne">
+
+        <div className="path-bar">
+          <button onClick={goBack}>⬅ Back</button>
+          <span>{path}</span>
+        </div>
+
+        <div className="file-list">
+          {data.length === 0 ? (
+            <p className="empty-message">No files</p>
+          ) : (
+            data.map((item, index) => (
+              <div key={index} className="file-row">
+
                 <div
-                  key={index}
-                  className="file-row"
+                  style={{ cursor: "pointer", flex: 1 }}
                   onClick={() => handleClick(item)}
-                  style={{ cursor: "pointer" }}
                 >
                   {item.metadata ? "📄" : "📁"} {item.name}
                 </div>
-              ))
-            )}
-          </div>
 
-          {fileUrl && (
-            <div className="preview">
-              <h3>File Preview</h3>
-              <iframe
-                src={fileUrl}
-                title="preview"
-                width="100%"
-                height="500px"
-                style={{ border: "none" }}
-              />
-              <a href={fileUrl} target="_blank" rel="noreferrer">
-                Open in new tab
-              </a>
-            </div>
+                {isTopLevel && !item.metadata && (
+                  <div
+                    className="action-btn"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      downloadFolder(item.name);
+                    }}
+                  >
+                    ⬇ Download
+                  </div>
+                )}
+
+              </div>
+            ))
           )}
         </div>
+
+        {/* ================= PREVIEW ================= */}
+        {(previewType || fileUrl) && (
+          <div className="preview">
+            <h3>File Preview</h3>
+
+            {/* IMAGE / PDF */}
+            {previewType === "iframe" && (
+              <>
+                <iframe
+                  src={fileUrl}
+                  width="100%"
+                  height="500px"
+                  style={{ border: "none" }}
+                />
+
+                <a
+                  href={fileUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none" }}
+                >
+                  Open in new tab
+                </a>
+              </>
+            )}
+
+            {/* CODE */}
+            {previewType === "code" && (
+              <pre
+                style={{
+                  background: "#111",
+                  color: "#00ffcc",
+                  padding: "15px",
+                  borderRadius: "10px",
+                  maxHeight: "400px",
+                  overflow: "auto",
+                  fontSize: "14px"
+                }}
+              >
+                {fileContent}
+              </pre>
+            )}
+
+            {/* OTHER */}
+            {previewType === "unsupported" && (
+              <p className="empty-message">
+                ❌ Preview not supported
+              </p>
+            )}
+
+          </div>
+        )}
+
       </div>
-    </>
+    </div>
   );
 }
 
-// Search component
+// ================= SEARCH =================
 function Search({ onSelectFolder }) {
   const [query, setQuery] = useState("");
   const [folders, setFolders] = useState([]);
@@ -111,7 +215,7 @@ function Search({ onSelectFolder }) {
 
   async function handleSearch() {
     if (!query.trim()) {
-      setMessage("First enter the folder name");
+      setMessage("First enter folder name");
       setFolders([]);
       setSearched(true);
       return;
@@ -132,18 +236,13 @@ function Search({ onSelectFolder }) {
 
     const onlyFolders = (data || []).filter(item => item.metadata === null);
 
-    if (onlyFolders.length === 0) {
-      setMessage("No folder exists");
-      setFolders([]);
-      setSearched(true);
-      return;
-    }
-
     const filtered = onlyFolders.filter(item =>
       item.name.toLowerCase().includes(query.toLowerCase().trim())
     );
 
-    if (filtered.length === 0) setMessage("No matching folders");
+    if (filtered.length === 0) {
+      setMessage("No matching folders");
+    }
 
     setFolders(filtered);
     setSearched(true);
@@ -170,10 +269,10 @@ function Search({ onSelectFolder }) {
               <div
                 key={index}
                 className="file-row"
-                style={{ cursor: "pointer" }}
                 onClick={() => onSelectFolder(item.name)}
+                style={{ cursor: "pointer" }}
               >
-                📁 {item.name}
+               <img src="/man.gif" width={27} height={27} /> {item.name}
               </div>
             ))
           )}
@@ -183,20 +282,19 @@ function Search({ onSelectFolder }) {
   );
 }
 
-// Parent component controlling conditional rendering
+// ================= MAIN =================
 export default function RepositoryManager() {
   const [selectedFolder, setSelectedFolder] = useState(null);
-
-  function handleBack() {
-    setSelectedFolder(null);
-  }
 
   return (
     <>
       {!selectedFolder ? (
         <Search onSelectFolder={setSelectedFolder} />
       ) : (
-        <Viewer folderName={selectedFolder} onBack={handleBack} />
+        <Viewer
+          folderName={selectedFolder}
+          onBack={() => setSelectedFolder(null)}
+        />
       )}
     </>
   );

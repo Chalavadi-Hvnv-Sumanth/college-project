@@ -69,18 +69,8 @@ export default function Userprofile() {
                         <span>verified Projects</span>
                     </div>
 
-
-
                     <div
                         className={`nav-item ${index === 2 ? "active" : ""}`}
-                        onClick={() => setIndex(2)}
-                    >
-                        <Image src="/upload.gif" alt="" className="nav-img" width={34} height={34} />
-                        <span>Upload</span>
-                    </div>
-
-                    <div
-                        className={`nav-item ${index === 3 ? "active" : ""}`}
                         onClick={() => setIndex(3)}
                     >
                         <Image src="/useraccount.gif" alt="" className="nav-img" width={30} height={30} />
@@ -104,8 +94,7 @@ export default function Userprofile() {
             {index === -1 && <User />}
             {index === 0 && <Projects />}
             {index === 1 && <Verified />}
-            {index === 2 && <Upload />}
-            {index === 3 && <Account />}
+            {index === 2 && <Account />}
         </>
     )
 }
