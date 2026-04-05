@@ -71,7 +71,7 @@ export default function Userprofile() {
 
                     <div
                         className={`nav-item ${index === 2 ? "active" : ""}`}
-                        onClick={() => setIndex(3)}
+                        onClick={() => setIndex(2)}
                     >
                         <Image src="/useraccount.gif" alt="" className="nav-img" width={30} height={30} />
                         <span>Details</span>
