@@ -103,7 +103,10 @@ function Viewer({ folderName, onBack }) {
     const a = document.createElement("a");
     a.href = url;
     a.download = `${name}.zip`;
+     document.body.appendChild(a); 
     a.click();
+     document.body.removeChild(a); 
+     URL.revokeObjectURL(url);
   }
 
   const isTopLevel = path === folderName;

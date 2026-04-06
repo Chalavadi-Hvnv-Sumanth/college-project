@@ -130,3 +130,16 @@ color: white;
      top: 2px;
   }
 }
+.loading {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.loading img {
+    width: 260px;
+    height: 260px;
+}

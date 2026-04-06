@@ -155,6 +155,7 @@ export default function CallingFunction() {
 
     setUploading(false);
     loadData(path);
+    e.target.value = "";
   }
 
   if (isLoading) return <p>Loading...</p>;
